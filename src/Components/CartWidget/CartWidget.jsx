@@ -1,9 +1,10 @@
-import cart from '../../assets/img/shopping-cart.png'
+import ShoppingCart from "../Icons/ShoppingCart"
 
 const CartWidget = () => {
+    console.log()
     return (
         <div>
-            <img src={cart} alt="Shopping Cart" width={35}/>
+            <ShoppingCart width="20">holaaaa</ShoppingCart>
             <p>0</p>
         </div>
     )
