@@ -3,21 +3,31 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from '../CartWidget/CartWidget';
+import { Link, NavLink } from 'react-router-dom';
 
-function NavBar() {
+export function NavBar() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">Sound Haven</Navbar.Brand>
+        <Link to={'/'}><Navbar.Brand>Sound Haven</Navbar.Brand></Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#shopByBrand">Shop by Brand</Nav.Link>
-            <Nav.Link href="#shopByCategory">Shop by category</Nav.Link>
+            <NavDropdown title="Shop by Brand" id="basic-nav-dropdown">
+              <NavLink to={'brand/FirstBrand'}>First Brand</NavLink>
+              <NavLink to={'brand/SecondBrand'}>Second Brand</NavLink>
+              <NavLink to={'brand/ThirdBrand'}>Third Brand</NavLink>
+            </NavDropdown>
+            <NavDropdown title="Category" id="basic-nav-dropdown">
+              <NavLink to={'/category/Aerophones'}>Aerophones</NavLink>
+              <NavLink to={'/category/Chordophones'}>Chordophones</NavLink>
+              <NavLink to={'/category/Idiophones'}>Idiophones</NavLink>
+              <NavLink to={'/category/Membranophones'}>Membranophones</NavLink>
+            </NavDropdown>
             <NavDropdown title="Software" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Cubase 12</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Reaper</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">FL Studio</NavDropdown.Item>
+              <NavLink>Cubase 12</NavLink>
+              <NavLink>Reaper</NavLink>
+              <NavLink>FL Studio</NavLink>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
@@ -26,5 +36,3 @@ function NavBar() {
     </Navbar>
   );
 }
-
-export default NavBar;
