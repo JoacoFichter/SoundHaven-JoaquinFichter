@@ -1,6 +1,18 @@
+* {
+  font-family: 'Averia Serif Libre', cursive;
+  color: #ffffff;
+}
+
 #root {
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0rem;
   text-align: center;
   align-self: flex-start;
+  background-color: #443d3d;
+  min-height: 100vh;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 100px;
 }

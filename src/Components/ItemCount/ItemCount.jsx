@@ -1,7 +1,6 @@
-import { useState } from "react"
 import { useCount } from "../../customHooks/useCount"
 
-export const ItemCount = ({initial=0, stock, min, onAdd}) => {
+export const ItemCount = ({initial=0, stock, min, onAdd, buttonMessage}) => {
 
     const {count, increment, decrement} = useCount(initial, stock, min)
 
@@ -10,11 +9,11 @@ export const ItemCount = ({initial=0, stock, min, onAdd}) => {
     }
 
     return (
-        <div className='d-flex flex-row'>
-            <button onClick={decrement}>◀</button>
+        <div className='d-flex'>
+            <button onClick={decrement}>-</button>
             <h3>{count}</h3>
-            <button onClick={increment}>▶</button>
-            <button onClick={handleOnAdd}>Add to the Cart</button>
+            <button onClick={increment}>+</button>
+            <button onClick={handleOnAdd}>{buttonMessage}</button>
         </div>
     )
 }

@@ -1,11 +1,17 @@
-import { useEffect, useState } from "react"
 import { instrumentsImgs } from "../../utils/images"
 import { ItemCount } from "../ItemCount/ItemCount"
+import { useCartContext } from "../../customHooks/useCartContext"
+
+ 
 
 export const ItemDetail = ({product}) => {
-
-    const onAdd = (count) => {
-        if (count != 0) console.log(count + ' Added to the cart')
+    
+    const { addToCart, storeCartTotal, cartTotal } = useCartContext()
+    
+    const onAdd = (quantity) => {
+        if (quantity != 0) {
+            addToCart({product, quantity})
+        }        
     }
 
     return (
@@ -19,7 +25,7 @@ export const ItemDetail = ({product}) => {
                     <p>Price: {product.price}</p>
                 </div>
                 <div className="col-6">
-                    <ItemCount initial={1} stock={product.stock} min={0} onAdd={onAdd}/>
+                    <ItemCount initial={1} stock={product.stock} min={0} onAdd={onAdd} buttonMessage={'Add to the Cart'}/>
                 </div>
                 </>
             : <h1>Cargando...</h1>

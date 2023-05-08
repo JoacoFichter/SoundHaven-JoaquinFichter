@@ -1,0 +1,23 @@
+.container {
+    margin-right: 0%;
+    margin-left: 0%;
+}
+
+.navbar *{
+    color: #A5A4A4 !important;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.show {
+    display: flex !important;
+    flex-direction: column;
+    /* text-align: center; */
+}
+.show * {
+    text-align: center;
+    text-decoration: none;
+}

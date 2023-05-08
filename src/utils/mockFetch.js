@@ -11,6 +11,6 @@ export const fetchProducts = (id) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(id ? products.find(product => product.id == id) : products) 
-        },2000)
+        },0)
     })    
 }
