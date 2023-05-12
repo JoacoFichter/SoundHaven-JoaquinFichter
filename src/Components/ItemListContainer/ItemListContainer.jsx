@@ -27,7 +27,7 @@ export const ItemListContainer = ( {greeting} ) => {
     return (
         <div>
             <h1 className="m-3">{greeting}</h1>
-            <h4 className="m-3">Take a look at our products 😁</h4>
+            <h4 className="m-3">Take a look at our products!</h4>
             {categoryId ? <h3>{categoryId}</h3> : null}
             {brandId ? <h3>{brandId}</h3> : null}
             <ItemList products={products}/>

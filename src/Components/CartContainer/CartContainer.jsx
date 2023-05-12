@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import { useEffect } from "react"
 import { useCartContext } from "../../customHooks/useCartContext"
 import { instrumentsImgs } from "../../utils/images"
 import { ItemCount } from "../ItemCount/ItemCount"
 import "./CartContainer.css"
-
 export const CartContainer = () => {
     const { cartList, cartTotal, resetCart, storeCartTotal, updateCart, deleteProduct } = useCartContext()
     
@@ -41,7 +41,7 @@ export const CartContainer = () => {
                     <h3>Cart totals</h3>
                     <h4>{cartTotal}</h4>
                     <button onClick={resetCart}>Reset Cart</button>
-                    <button onClick={()=>{}}>Checkout</button>
+                    <Link to='/SoundHaven-JoaquinFichter/Checkout'><button>Checkout</button></Link>
                 </div>
             </div>
         :

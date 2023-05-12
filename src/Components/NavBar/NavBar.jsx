@@ -11,20 +11,20 @@ export function NavBar() {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Link to={'/'}><Navbar.Brand><Logo /></Navbar.Brand></Link>
+        <Link to={'/SoundHaven-JoaquinFichter/'}><Navbar.Brand><Logo /></Navbar.Brand></Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
             <NavDropdown title="Shop by Brand" id="basic-nav-dropdown">
-              <NavLink to={'brand/FirstBrand'}>First Brand</NavLink>
-              <NavLink to={'brand/SecondBrand'}>Second Brand</NavLink>
-              <NavLink to={'brand/ThirdBrand'}>Third Brand</NavLink>
+              <NavLink to={'/SoundHaven-JoaquinFichter/brand/FirstBrand'}>First Brand</NavLink>
+              <NavLink to={'/SoundHaven-JoaquinFichter/brand/SecondBrand'}>Second Brand</NavLink>
+              <NavLink to={'/SoundHaven-JoaquinFichter/brand/ThirdBrand'}>Third Brand</NavLink>
             </NavDropdown>
             <NavDropdown title="Category" id="basic-nav-dropdown">
-              <NavLink to={'/category/Aerophones'}>Aerophones</NavLink>
-              <NavLink to={'/category/Chordophones'}>Chordophones</NavLink>
-              <NavLink to={'/category/Idiophones'}>Idiophones</NavLink>
-              <NavLink to={'/category/Membranophones'}>Membranophones</NavLink>
+              <NavLink to={'/SoundHaven-JoaquinFichter/category/Aerophones'}>Aerophones</NavLink>
+              <NavLink to={'/SoundHaven-JoaquinFichter/category/Chordophones'}>Chordophones</NavLink>
+              <NavLink to={'/SoundHaven-JoaquinFichter/category/Idiophones'}>Idiophones</NavLink>
+              <NavLink to={'/SoundHaven-JoaquinFichter/category/Membranophones'}>Membranophones</NavLink>
             </NavDropdown>
             <NavDropdown title="Software" id="basic-nav-dropdown">
               <NavLink>Cubase 12</NavLink>

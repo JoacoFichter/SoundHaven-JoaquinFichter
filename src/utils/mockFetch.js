@@ -1,4 +1,3 @@
-import { instrumentsImgs } from "./images"
 
 export const products = [
     {id: 1, name: 'Electric guitar', category:'Chordophones', brand:'FirstBrand', imgSrc: 'guitar', price: 300, stock: 45},

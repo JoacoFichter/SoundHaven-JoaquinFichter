@@ -1,0 +1,18 @@
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+form input {
+    color: #A5A4A4; 
+}
+
+form input::placeholder {
+    color: #A5A4A4; 
+}
+
+form button {
+    width: fit-content;
+    align-self: center;
+}

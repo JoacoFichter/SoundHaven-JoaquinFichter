@@ -3,16 +3,5 @@
     left: 0px;
     width: 200px;
     border-radius: 10px;
-    overflow: hidden;
     background: rgba(165, 164, 164, 0);
 }
-/* .logoBackground::after {
-    content: "";
-    width: 200%;
-    height: 200%;
-    bottom: 0px;
-    left: 0px;
-    position: absolute;
-    opacity: 0.25;
-    background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 100%);
-} */

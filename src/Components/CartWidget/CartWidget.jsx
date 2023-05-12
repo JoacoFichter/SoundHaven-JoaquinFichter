@@ -10,7 +10,7 @@ const CartWidget = () => {
             <p>{cartList.reduce((acc, element)=>{
                 return acc += element.quantity                
             }, 0)}</p>
-            <Link to={'/Cart'}><ShoppingCart width="30">holaaaa</ShoppingCart></Link>
+            <Link to={'/SoundHaven-JoaquinFichter/Cart'}><ShoppingCart width="30">holaaaa</ShoppingCart></Link>
         </div>
     )
 }

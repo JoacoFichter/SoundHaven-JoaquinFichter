@@ -12,7 +12,7 @@ const Item = ({product}) => {
                     <li className="list-group-item">${product.price}</li>
                 </ul>
                 <div className="card-footer">
-                    <Link to={`/detail/${product.id}`}>Details</Link>
+                    <Link to={`/SoundHaven-JoaquinFichter/detail/${product.id}`}>Details</Link>
                 </div>
             </div>
         </div>
