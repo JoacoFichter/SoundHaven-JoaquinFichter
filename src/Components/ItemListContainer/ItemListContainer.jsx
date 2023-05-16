@@ -3,26 +3,28 @@ import { fetchProducts } from "../../utils/mockFetch"
 import ItemList from "../ItemList/ItemList"
 import { ItemCount } from "../ItemCount/ItemCount"
 import { useParams } from "react-router-dom"
+import { collection, getDocs, getFirestore } from "firebase/firestore"
 
 export const ItemListContainer = ( {greeting} ) => {
     const [products, setProducts] = useState([])
     const {categoryId, brandId} = useParams()
 
-    useEffect(() => { 
-        if (categoryId) {
-            fetchProducts()
-                .then(res => setProducts(res.filter(prod => prod.category == categoryId)))
-                .catch(err => console.log(err))
-        } else if (brandId) {
-            fetchProducts()
-                .then(res => setProducts(res.filter(prod => prod.brand == brandId)))
-                .catch(err => console.log(err))
-        } else {
-            fetchProducts()
-                .then(res => setProducts(res))
-                .catch(err => console.log(err))
-        }
-    },[categoryId,brandId])
+    useEffect(() => {
+        const db = getFirestore()
+        const queryCollection = collection(db, 'products')
+
+        getDocs(queryCollection)
+            .then((res=>setProducts(res.docs.map(product => ({id: product.id, ...product.data()})))))
+            .then(() => {
+                if(categoryId){
+                    setProducts(products.filter(prod => prod.category == categoryId))
+                }else if(brandId){
+                    setProducts(products.filter(prod => prod.brand == brandId))
+                }
+            })
+            .catch(err => console.log(err))
+    }, [])
+
 
     return (
         <div>

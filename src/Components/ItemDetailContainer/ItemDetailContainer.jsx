@@ -3,6 +3,7 @@ import { ItemCount } from "../ItemCount/ItemCount"
 import { ItemDetail } from "../ItemDetail/ItemDetail"
 import { useParams } from "react-router-dom"
 import { fetchProducts } from "../../utils/mockFetch"
+import { doc, getDoc, getFirestore } from "firebase/firestore"
 
 
 export const ItemDetailContainer = () => {
@@ -10,8 +11,11 @@ export const ItemDetailContainer = () => {
     const {productId}= useParams()
     
     useEffect(() => {
-        fetchProducts(productId)
-            .then(product => setProduct(product))
+        const db = getFirestore()
+        const queryDoc = doc(db, 'products', productId)
+
+        getDoc(queryDoc)
+            .then(res => setProduct({id: res.id, ...res.data()}))
     }, [])
 
     return (

@@ -18,6 +18,14 @@ export const WithFormValidation = (WrappedComponent) => {
                 newErrors.email = 'Please enter your email'
                 isValid = false
             }
+            if(!props.formData.repeatedEmail) {
+                newErrors.repeatedEmail = 'Please repeat your email'
+                isValid = false
+            }
+            if(props.formData.email != props.formData.repeatedEmail) {
+                newErrors.mismatchedEmail = 'Your email addresses do not match'
+                isValid = false
+            }
             setError(newErrors)
             return isValid
         }

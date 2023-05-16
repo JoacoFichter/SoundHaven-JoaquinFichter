@@ -13,6 +13,7 @@ form input::placeholder {
 }
 
 form button {
+    color: #A5A4A4;
     width: fit-content;
     align-self: center;
 }

@@ -6,7 +6,7 @@ import { useCartContext } from "../../customHooks/useCartContext"
 
 export const ItemDetail = ({product}) => {
     
-    const { addToCart, storeCartTotal, cartTotal } = useCartContext()
+    const { addToCart } = useCartContext()
     
     const onAdd = (quantity) => {
         if (quantity != 0) {
