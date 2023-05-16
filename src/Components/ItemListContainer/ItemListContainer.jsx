@@ -14,18 +14,18 @@ export const ItemListContainer = ( {greeting} ) => {
         const queryCollection = collection(db, 'products')
 
         getDocs(queryCollection)
-            .then((res=>setProducts(res.docs.map(product => ({id: product.id, ...product.data()})))))
-            .then(() => {
-                if(categoryId){
-                    setProducts(products.filter(prod => prod.category == categoryId))
-                }else if(brandId){
-                    setProducts(products.filter(prod => prod.brand == brandId))
-                }
+            .then(res=>{
+                let productsArray = res.docs.map(product => ({id: product.id, ...product.data()}))
+                if(categoryId){setProducts(productsArray.filter(prod => prod.category == categoryId))
+                }else if(brandId){setProducts(productsArray.filter(prod => prod.brand == brandId))
+                }else {
+                    setProducts(productsArray)
+                }                
             })
             .catch(err => console.log(err))
-    }, [])
+    }, [categoryId, brandId])
 
-
+    console.log(products)
     return (
         <div>
             <h1 className="m-3">{greeting}</h1>
