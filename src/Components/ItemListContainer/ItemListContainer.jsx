@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react"
-import { fetchProducts } from "../../utils/mockFetch"
-import ItemList from "../ItemList/ItemList"
-import { ItemCount } from "../ItemCount/ItemCount"
 import { useParams } from "react-router-dom"
 import { collection, getDocs, getFirestore } from "firebase/firestore"
+import ItemList from "../ItemList/ItemList"
 
 export const ItemListContainer = ( {greeting} ) => {
     const [products, setProducts] = useState([])
@@ -25,7 +23,6 @@ export const ItemListContainer = ( {greeting} ) => {
             .catch(err => console.log(err))
     }, [categoryId, brandId])
 
-    console.log(products)
     return (
         <div>
             <h1 className="m-3">{greeting}</h1>

@@ -10,7 +10,7 @@ export const ItemDetail = ({product}) => {
     
     const onAdd = (quantity) => {
         if (quantity != 0) {
-            addToCart({product, quantity})
+            addToCart({...product, quantity})
         }        
     }
 

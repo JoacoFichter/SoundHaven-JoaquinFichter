@@ -5,7 +5,7 @@
     align-items: center;
     margin: 20px 20px 20px 20px;
     padding: 10px;
-}
+} 
 .cartContainer * {
     color: #A5A4A4;
 }
@@ -18,6 +18,11 @@
     margin: 10px;
 }
 
+.cartItemImg{
+    width: 80%;
+    padding: 5px;
+}
+
 .cartItemDetail {
     border-left: #A5A4A4 solid 2px;
     padding-left: 15px;
@@ -26,10 +31,16 @@
 }
 .cartDetail {
     background-color: aliceblue;
-    margin: 10px;
     text-align: left;
+    align-self: flex-start;
+    margin: 10px;
+    padding: 10px;
 }
 
 .noItemsMessage {
     margin: 20px;
+}
+
+button {
+    margin: 5px !important;
 }

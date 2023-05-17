@@ -2,6 +2,7 @@ form {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    align-items: flex-start;
 }
 
 form input {
@@ -15,5 +16,4 @@ form input::placeholder {
 form button {
     color: #A5A4A4;
     width: fit-content;
-    align-self: center;
 }

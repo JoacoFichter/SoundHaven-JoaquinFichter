@@ -8,12 +8,16 @@ const ItemList = ({products}) => {
             flexWrap: "wrap",
             justifyContent: "center"
         }}>
-            {products.length == 0 ? 'Cargando...' :            
-            products.map((product) => {
-                return (
-                    <Item key={product.id} product={product} />
-                )
-            })}
+            {products.length == 0 
+                ? 
+                    'Cargando...' 
+                :            
+                    products.map((product) => {
+                        return (
+                            <Item key={product.id} product={product} />
+                        )
+                    })
+            }
         </div>
     )
 }

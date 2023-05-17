@@ -15,7 +15,7 @@ export const CartContainer = () => {
         <>
         {cartList.length != 0 
         ?
-            <div className="cartContainer">
+            <div className="cartContainer flex-row flex-md-row flex-sm-column-reverse">
                 <div className="cartItems w-50">
                     {cartList.map((element) => {
                         const handleDelete = () => {
@@ -24,22 +24,22 @@ export const CartContainer = () => {
                         const onAdd = (quantity) => {
                             updateCart({...element, quantity})
                         }
-                        return  <div key={element.product.id} className="cartItem w-75">
-                                    <div className="w-50">
-                                        <img src={instrumentsImgs[element.product.imgSrc]} className="w-25" alt={element.product.name} />
+                        return  <div key={element.id} className="cartItem w-75">
+                                    <div className="cartItemImg">
+                                        <img src={instrumentsImgs[element.imgSrc]} className="cartItemImg" alt={element.name} />
                                     </div>
                                     <div className="w-50 cartItemDetail">
-                                        <li>{element.product.name}</li>
+                                        <li>product: <h2>{element.name}</h2></li>
                                         <li>Quantity:</li>  
-                                        <ItemCount initial={element.quantity} stock={element.product.stock} min={0} onAdd={onAdd} buttonMessage={'Update Cart'}/>
+                                        <ItemCount initial={element.quantity} stock={element.stock} min={0} onAdd={onAdd} buttonMessage={'Update Cart'}/>
                                         <button onClick={handleDelete}>Delete product</button>
                                     </div>
                                 </div>
                     })}
                 </div>
                 <div className="cartDetail w-25">
-                    <h3>Cart totals</h3>
-                    <h4>{cartTotal}</h4>
+                    <h3>Cart total:</h3>
+                    <h4>${cartTotal}</h4>
                     <button onClick={resetCart}>Reset Cart</button>
                     <Link to='/SoundHaven-JoaquinFichter/Checkout'><button>Checkout</button></Link>
                 </div>

@@ -9,12 +9,16 @@ export const ItemCount = ({initial=0, stock, min, onAdd, buttonMessage}) => {
     }
 
     return (
-        <div className='d-flex'>
+        <>
+        <center className='d-flex'>
             <button onClick={decrement}>-</button>
             <h3>{count}</h3>
             <button onClick={increment}>+</button>
+        </center>
+        <center className="d-flex">
             <button onClick={handleOnAdd}>{buttonMessage}</button>
-        </div>
+        </center>
+        </>
     )
 }
 

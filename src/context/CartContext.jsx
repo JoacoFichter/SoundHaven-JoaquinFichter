@@ -8,9 +8,9 @@ export const CartContextProvider = ({children}) => {
     const [cartTotal, setCartTotal] = useState(0)
     
     const addToCart = (newProduct) => {
-        if(cartList.some((element) => element.product == newProduct.product)) {
+        if(cartList.some((element) => element.id == newProduct.id)) {
             const updatedCart = cartList.map((element) => {
-                if(element.product == newProduct.product)element.quantity += newProduct.quantity
+                if(element.id == newProduct.id)element.quantity += newProduct.quantity
                 return element
             })
             setCartList(updatedCart)
@@ -20,16 +20,16 @@ export const CartContextProvider = ({children}) => {
     } 
 
     const updateCart = (updatedProduct) => {
-            if(cartList.some((element) => element.product == updatedProduct.product)) {
+            if(cartList.some((element) => element.id == updatedProduct.id)) {
                 let updatedCart
                 if(updatedProduct.quantity != 0){
                     updatedCart = cartList.map((element) => {
-                        if(element.product == updatedProduct.product)element.quantity = updatedProduct.quantity
+                        if(element.id == updatedProduct.id) element.quantity = updatedProduct.quantity
                         return element
                     })
                     
                 }else{
-                    updatedCart = cartList.filter((element) => element.product != updatedProduct.product)
+                    updatedCart = cartList.filter((element) => element.id != updatedProduct.id)
                 }
                 setCartList(updatedCart)
             }else {
@@ -40,7 +40,7 @@ export const CartContextProvider = ({children}) => {
 
     const storeCartTotal = () => {setCartTotal(
         cartList.reduce((acc, element)=> {
-        return acc + (element.quantity * element.product.price)
+        return acc + (element.quantity * element.price)
     }, 0))}
 
     const resetCart = () => {
@@ -48,7 +48,7 @@ export const CartContextProvider = ({children}) => {
     }
 
     const deleteProduct = (deletedProduct) => {
-        let updatedCart = cartList.filter(element => element.product != deletedProduct.product)
+        let updatedCart = cartList.filter(element => element.id != deletedProduct.id)
         setCartList(updatedCart)
     }
 
