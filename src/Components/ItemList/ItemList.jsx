@@ -10,7 +10,7 @@ const ItemList = ({products}) => {
         }}>
             {products.length == 0 
                 ? 
-                    'Cargando...' 
+                    'Loading...' 
                 :            
                     products.map((product) => {
                         return (
